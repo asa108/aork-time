@@ -63,7 +63,7 @@ const HomePage = () => {
   // ★追加
   // 算出結果を文字列としてgetOffWorkに代入
   let getOffWork =
-    totalTimeHour.toString() + "." + ("00" + totalTimeMinutes).slice(-2);
+    totalTimeHour.toString() + ":" + ("00" + totalTimeMinutes).slice(-2);
 
   //   const finalGetOffWork = getOffWork.replace(".", ":");
 
