@@ -6,7 +6,6 @@ import TimePickers from "../../components/timer-count/timer-count";
 
 const HomePage = () => {
   const [startTime, setStartTime] = useState("07:30");
-  // const result1 = Number(startTime.replace(":", "."));
 
   //選択された値にstartTimeを置き換える
   const handleStartWorkTime = (event) => {
@@ -14,9 +13,6 @@ const HomePage = () => {
   };
 
   const [timeBreak, setTimeBreak] = useState("02:00");
-  const result2 = Number(timeBreak.replace(":", "."));
-
-  console.log("result2", result2);
 
   console.log("timeBreak", timeBreak);
   const handleTimeBreak = (event) => {
@@ -24,8 +20,6 @@ const HomePage = () => {
   };
 
   const [workTime, setWorkTime] = useState("07:30");
-  const result3 = Number(workTime.replace(":", "."));
-  console.log("result3", result3);
 
   console.log("workTime", workTime);
   const handleWorkTime = (event) => {
@@ -33,19 +27,23 @@ const HomePage = () => {
   };
 
   // ★追加
-  // hourとminutesに分けてhourをminutesに変換
+  // hourとminutesに分けてhourをminutesに変換(出勤時間)
+  // なんでsubstring(3,5)になっているかというと
+  // 表記は 07:45 みたいに:も文字数としてカウントしている
   const startTimeHour = Number(startTime.substring(0, 2));
+  console.log("startTimeHour", startTimeHour);
   const startTimeMinutes = Number(startTime.substring(3, 5));
+  console.log("startTimeMinutes", startTimeMinutes);
   const startTimeTotalMinutes = startTimeHour * 60 + startTimeMinutes;
 
   // ★追加
-  // hourとminutesに分けてhourをminutesに変換
+  // hourとminutesに分けてhourをminutesに変換（休憩時間）
   const timeBreakHour = Number(timeBreak.substring(0, 2));
   const timeBreakMinutes = Number(timeBreak.substring(3, 5));
   const timeBreakTotalMinutes = timeBreakHour * 60 + timeBreakMinutes;
 
   // ★追加
-  // hourとminutesに分けてhourをminutesに変換
+  // hourとminutesに分けてhourをminutesに変換（働く時間）
   const workTimeHour = Number(workTime.substring(0, 2));
   const workTimeMinutes = Number(workTime.substring(3, 5));
   const workTimeTotalMinutes = workTimeHour * 60 + workTimeMinutes;
@@ -54,20 +52,16 @@ const HomePage = () => {
   // 全項目のminutesを加算
   let totalTimeMinutes =
     startTimeTotalMinutes + timeBreakTotalMinutes + workTimeTotalMinutes;
-  // minutesをhourに変換
+  // minutesをhourに変換 Matg.floorで小数点を切り捨て
   const totalTimeHour = Math.floor(totalTimeMinutes / 60);
   // minutesを算出
+  // totalTimeMinutes % 60 で１時間で割り切れるかどうか
   totalTimeMinutes = totalTimeMinutes % 60 > 0 ? totalTimeMinutes % 60 : 0;
 
-  // let getOffWork = result1 + result2 + result3;
   // ★追加
   // 算出結果を文字列としてgetOffWorkに代入
   let getOffWork =
     totalTimeHour.toString() + ":" + ("00" + totalTimeMinutes).slice(-2);
-
-  //   const finalGetOffWork = getOffWork.replace(".", ":");
-
-  console.log("getOffWork", getOffWork);
 
   return (
     <div className="homepage">
