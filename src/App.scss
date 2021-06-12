@@ -1,6 +1,14 @@
 .app{
   display: flex;
-  padding:50px ;
+  margin: 50px auto;
+  width: 70%;
+
+    @media screen and (max-width:800px){
+     width: 80%;
+     flex-direction:column;
+    //  margin: 50px auto;
+    }
+
 
   .homepage_container{
     width: 50%;
@@ -10,9 +18,19 @@
     width: 50%;
     text-align: center;
     margin: auto;
+
+        @media screen and (max-width:800px){
+    width: 300px;
+    margin-top: 30px;
+    }
+
     .img{
       width: 450px;
       opacity: 0.8;
+
+    @media screen and (max-width:800px){
+    width: 300px;
+    }
     }
   }
 }
