@@ -6,7 +6,7 @@ import TimePickers from "../../components/timer-count/timer-count";
 
 const HomePage = () => {
   const [startTime, setStartTime] = useState("07:30");
-  const result1 = Number(startTime.replace(":", "."));
+  // const result1 = Number(startTime.replace(":", "."));
 
   //選択された値にstartTimeを置き換える
   const handleStartWorkTime = (event) => {
