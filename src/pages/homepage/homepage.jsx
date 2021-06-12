@@ -6,12 +6,7 @@ import TimePickers from "../../components/timer-count/timer-count";
 
 const HomePage = () => {
   const [startTime, setStartTime] = useState("07:30");
-  // console.log("startTime", startTime);
   const result1 = Number(startTime.replace(":", "."));
-
-  // const over60 = result1;
-  //   const result1_1 = result1.toFixed(2);
-  //   console.log("result1_1", result1_1);
 
   //選択された値にstartTimeを置き換える
   const handleStartWorkTime = (event) => {
@@ -36,12 +31,6 @@ const HomePage = () => {
   const handleWorkTime = (event) => {
     setWorkTime(event.target.value);
   };
-
-  // const str = "プログラミング学習";
-  // const a = str.slice(0, 7);
-  // const b = "の";
-  // const c = str.slice(7);
-  // console.log(a + b + c);
 
   // ★追加
   // hourとminutesに分けてhourをminutesに変換
