@@ -8,7 +8,7 @@ const App = () => {
     <div className="app">
       <HomePage className="homepage_container" />
       <div className="img_container">
-        <img src="./work_img.png" className="img" alt="background-image" />
+        <img src="./work_img.png" className="img" alt="background" />
       </div>
     </div>
   );
