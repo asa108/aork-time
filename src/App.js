@@ -1,8 +1,16 @@
+import React from "react";
+import HomePage from "./pages/homepage/homepage";
+
 import "./App.css";
 
 
+
 const App = () => {
-  return <div className="App">hello world</div>;
+  return (
+    <div className="app">
+      <HomePage />
+    </div>
+  );
 };
 
 
