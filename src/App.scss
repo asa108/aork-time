@@ -1,0 +1,18 @@
+.app{
+  display: flex;
+  padding:50px ;
+
+  .homepage_container{
+    width: 50%;
+  }
+
+  .img_container{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    .img{
+      width: 450px;
+      opacity: 0.8;
+    }
+  }
+}

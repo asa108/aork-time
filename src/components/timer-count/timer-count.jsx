@@ -6,11 +6,15 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
+    fontFamily: "'Noto Sans JP', sans-serif",
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200,
+    width: 150,
+  },
+  message: {
+    width: 205,
   },
 }));
 
@@ -19,12 +23,10 @@ const TimePickers = ({ value, handleMethods, message }) => {
 
   return (
     <form className={classes.container} noValidate>
-      <span>{message}</span>
+      <span className={classes.message}>{message}</span>
       <TextField
         id="time"
-        // label="what time did you get to work?"
         type="time"
-        // defaultValue={defaultValue}
         className={classes.textField}
         InputLabelProps={{
           shrink: true,

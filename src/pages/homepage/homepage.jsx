@@ -69,29 +69,35 @@ const HomePage = () => {
 
   console.log("getOffWork", getOffWork);
 
-  // console.log(result1);
-  // console.log(timeBreak);
-  // console.log(workTime);
-
   return (
-    <div>
-      <h2>This is home page</h2>
+    <div className="homepage">
+      <h1>今日何時にあがる？</h1>
+      <br />
       <TimePickers
         value={startTime}
         handleMethods={handleStartWorkTime}
-        message="What time did you get to work?"
+        message="何時に出勤しましたか？"
+        className="timepicker1"
       />
+      <br />
       <TimePickers
         value={timeBreak}
         handleMethods={handleTimeBreak}
-        message="How long is your break?"
+        message="トータルの休憩時間は？"
       />
+      <br />
+
       <TimePickers
         value={workTime}
         handleMethods={handleWorkTime}
-        message="How long do you want to work?"
+        message="何時間働く予定でしたか？"
       />
-      <span>you suppose to get off at {getOffWork} today</span>
+      <br />
+      <br />
+
+      <p>
+        今日は <span className="getofftime">{getOffWork}</span> に退勤予定です
+      </p>
     </div>
   );
 };
