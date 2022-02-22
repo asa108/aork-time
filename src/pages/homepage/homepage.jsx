@@ -84,13 +84,13 @@ const HomePage = () => {
       <TimePickers
         value={workTime}
         handleMethods={handleWorkTime}
-        message="How long you suppose to be working?"
+        message="How long you are supposed to work?"
       />
       <br />
       <br />
 
       <p>
-        You suppose to get off at <span className="getofftime">{getOffWork}</span>.
+        You are supposed to get off at <span className="getofftime">{getOffWork}</span>.
       </p>
     </div>
   );
