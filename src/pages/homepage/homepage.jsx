@@ -65,32 +65,32 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <h1>今日何時にあがる？</h1>
+      <h1>What time will you get off today?</h1>
       <br />
       <TimePickers
         value={startTime}
         handleMethods={handleStartWorkTime}
-        message="何時に出勤しましたか？"
+        message="What time did you get to work?"
         className="timepicker1"
       />
       <br />
       <TimePickers
         value={timeBreak}
         handleMethods={handleTimeBreak}
-        message="トータルの休憩時間は？"
+        message="How long did you take a break?"
       />
       <br />
 
       <TimePickers
         value={workTime}
         handleMethods={handleWorkTime}
-        message="何時間働く予定でしたか？"
+        message="How long you suppose to be working?"
       />
       <br />
       <br />
 
       <p>
-        今日は <span className="getofftime">{getOffWork}</span> に退勤予定です
+        You suppose to get off at <span className="getofftime">{getOffWork}</span>.
       </p>
     </div>
   );
